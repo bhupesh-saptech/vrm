@@ -21,9 +21,9 @@
                                 <input class="text" name="last_name" class="form-control">
                             </div>
                         </div>
-                        <div class="div-md-12">
+                        <div class="col-md-12">
                             <div class="form-group">
-                                <label for="">Email Address</label>
+                                <label for="">Email </label>
                                 <input class="email" name="last_name" class="form-control">
                             </div>
                         </div>

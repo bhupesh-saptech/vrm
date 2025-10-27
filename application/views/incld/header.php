@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BCPL - Vendor Portal</title>
-
+  <base><?php echo $base_url(); ?></base>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -33,6 +33,7 @@
   <!-- Select2 style -->
   <link rel="stylesheet" href="assets/dist/css/select2.min.css">
   <link rel="stylesheet" href="assets/dist/css/custom.css">
+
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
