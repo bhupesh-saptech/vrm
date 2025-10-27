@@ -12,10 +12,10 @@
                     <div class="card-body">
                         <div class=row">
                             <div class="col-md-12">
-                                <?php include('../incld/messages.php'); ?>
+                                <?php include('assets/incld/messages.php'); ?>
                             </div>
                         </div>
-                        <form action="" method="POST">
+                        <form action="login/login" method="POST">
                             <div class="form-group">
                                 <label for="">User ID</label>
                                 <input type="text" name="user_id" class="form-control" placeholder="User ID">
