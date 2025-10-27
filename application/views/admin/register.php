@@ -8,38 +8,51 @@
                 </div>
                 <div class="card-body">
                     <form method="post" action="<?php echo base_url('register')?>">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">First Name</label>
-                                <input class="text" name="first_name" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">Last Name</label>
-                                <input class="text" name="last_name" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="">Email </label>
-                                <input class="email" name="last_name" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">Password</label>
-                                <input class="password" name="password" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">Confirm Password</label>
-                                <input class="password" name="cpassword" class="form-control">
-                            </div>
-                        </div>
-                    </div>
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>
+                                    <label class="form-label" >First Name</label>
+                                    <input class="form-control" type="text" name="first_name" >
+                                    <small><?php echo form_error('first_name');?></small>
+                                </td>
+                                <td>
+                                    <label class="form-label">Last Name</label>
+                                    <input class="form-control" type="text" name="last_name" >
+                                    <small><?php echo form_error('last_name');?></small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="form-label">Email ID</label>
+                                    <input class="form-control" type="text" name="mail_id" >
+                                    <small><?php echo form_error('mail_id');?></small>
+                                </td>
+                                <td>
+                                    <label class="form-label">City</label>
+                                    <input class="form-control" type="text" name="city" >
+                                    <small><?php echo form_error('city');?></small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="form-label" >Password</label>
+                                    <input class="form-control" type="password" name="pass_wd" >
+                                    <small><?php echo form_error('pass_wd');?></small>
+                                </td>
+                                <td>
+                                    <label class="form-label" >Confirm Password</label>
+                                    <input class="form-control" type="password" name="cpass_wd" >
+                                    <small><?php echo form_error('cpass_wd');?></small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="text-center">
+                                    <button class="btn btn-primary" type="button" name="submit" >Submit</button>
+                                </td>
+                               
+                            </tr>
+                        </table>
+                    </form>
                 </div>
             </div>
         </div>

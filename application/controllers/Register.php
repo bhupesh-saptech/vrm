@@ -11,7 +11,7 @@ class Register extends CI_Controller {
         $this->load->view("incld/jslib");
         $this->load->view("incld/footer");
     }
-    public function validation() {
+    public function register() {
         $this->form_validation->set_rules('first_name','First Name','required|trim|alpha');
         $this->form_validation->set_rules('last_name' ,'Last Name','required|trim|alpha');
         $this->form_validation->set_rules('mail_id'   ,'Email ID' ,'required|trim|valid_email');
