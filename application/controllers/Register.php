@@ -18,9 +18,9 @@ class Register extends CI_Controller {
         $this->form_validation->set_rules('pass_wd'   ,'Password' ,'required|trim|');
         if($this->form_validation->run() == FALSE) {
             $this->index();
-        }
-    } else {
-        echo "Form Validation Passed";
+        } else {
+            echo "Form Validation Passed";
+        } 
     }
 
 }
