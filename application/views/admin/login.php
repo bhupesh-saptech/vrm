@@ -10,7 +10,7 @@
                         <h5>Login Form</h5>
                     </div>
                     <div class="card-body">
-                        <div class=row">
+                        <div class="row">
                             <div class="col-md-12">
                                 <?php include('assets/incld/messages.php'); ?>
                             </div>
