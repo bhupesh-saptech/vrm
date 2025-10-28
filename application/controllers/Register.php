@@ -12,14 +12,19 @@ class Register extends CI_Controller {
         $this->load->view("incld/footer");
     }
     public function register() {
-        $this->form_validation->set_rules('first_name','First Name','required|trim|alpha');
-        $this->form_validation->set_rules('last_name' ,'Last Name','required|trim|alpha');
-        $this->form_validation->set_rules('mail_id'   ,'Email ID' ,'required|trim|valid_email');
-        $this->form_validation->set_rules('pass_wd'   ,'Password' ,'required|trim|');
-        if($this->form_validation->run() == FALSE) {
-            $this->index();
+        $this->form_validation->set_rules('first_name','First Name','required');
+        $this->form_validation->set_rules('last_name' ,'Last Name','required');
+        $this->form_validation->set_rules('mail_id'   ,'Email ID' ,'required|valid_email');
+        $this->form_validation->set_rules('password'  ,'Password' ,'required');
+        if($this->form_validation->run()) {
+            $data = array('first_name'  => $this->input->post('first_name'),
+                          'last_name'   => $this->input->post('last_name'),
+                          'mail_id'     => $this->input->post('mail_id') ,
+                          'password'    => $this->input->post('password') ) ;
+            echo "<pre>";
+            print_r($data);
         } else {
-            echo "Form Validation Passed";
+            $this->index();
         } 
     }
 

@@ -7,7 +7,7 @@
                     <h5>Register</h5>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="<?php echo base_url('register')?>">
+                    <form method="post" action="<?php echo base_url('register')?>" autocomplete="off" >
                         <table class="table table-bordered">
                             <tr>
                                 <td>
@@ -24,7 +24,7 @@
                             <tr>
                                 <td>
                                     <label class="form-label">Email ID</label>
-                                    <input class="form-control" type="text" name="mail_id" >
+                                    <input class="form-control" type="email" name="mail_id" autocomplete="off" >
                                     <small><?php echo form_error('mail_id');?></small>
                                 </td>
                                 <td>
@@ -36,8 +36,8 @@
                             <tr>
                                 <td>
                                     <label class="form-label" >Password</label>
-                                    <input class="form-control" type="password" name="pass_wd" >
-                                    <small><?php echo form_error('pass_wd');?></small>
+                                    <input class="form-control" type="password" name="password" autocomplete="new-password">
+                                    <small><?php echo form_error('password');?></small>
                                 </td>
                                 <td>
                                     <label class="form-label" >Confirm Password</label>
@@ -47,7 +47,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2" class="text-center">
-                                    <button class="btn btn-primary" type="button" name="submit" >Submit</button>
+                                    <button class="btn btn-primary" type="submit" name="submit" >Submit</button>
                                 </td>
                                
                             </tr>
