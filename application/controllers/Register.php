@@ -14,6 +14,7 @@ class Register extends CI_Controller {
     public function register() {
         $this->form_validation->set_rules('first_name','First Name','required');
         $this->form_validation->set_rules('last_name' ,'Last Name','required');
+        $this->form_validation->set_rules('city' ,'City','required');
         $this->form_validation->set_rules('mail_id'   ,'Email ID' ,'required|valid_email');
         $this->form_validation->set_rules('password'  ,'Password' ,'required');
         if($this->form_validation->run()) {
