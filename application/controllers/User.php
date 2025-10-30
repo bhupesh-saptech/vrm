@@ -1,5 +1,6 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+    defined('BASEPATH') OR exit('No direct script access allowed');
+    
 
 class User extends CI_Controller {
     public function __construct() {
@@ -19,6 +20,6 @@ class User extends CI_Controller {
         $this->load->view("user/add");
         $this->load->view("incld/jslib");
         $this->load->view("incld/footer");
-    }
+    } 
 }
 ?>
