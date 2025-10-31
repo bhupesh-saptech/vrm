@@ -53,5 +53,5 @@ $route['default_controller'] = 'login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
 
-$route['register']['GET']  = 'register/index';
-$route['register']['POST'] = 'register/register';
+$route['user/register']['GET']  = 'user/index';
+$route['user/register']['POST'] = 'user/register';
