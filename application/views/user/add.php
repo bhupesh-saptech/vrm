@@ -16,41 +16,21 @@
                                     <small><?php echo form_error('mail_id');?></small>
                                 </td>
                                 <td>
-                                    <label class="form-label" >user Name</label>
-                                    <input class="form-control" type="text" name="user_nm" >
-                                    <small><?php echo form_error('user_nm');?></small>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="form-label" >Phone No</label>
-                                    <input class="form-control" type="text" name="user_ph" >
-                                    <small><?php echo form_error('user_ph');?></small>
-                                </td>
-                                <td>
-                                    <label class="form-label" >User Role</label>
-                                    <select class="form-control" name="role_id" >
-                                        <option value="" >select role</option>
-                                        <option value="1">admin</option>
-                                        <option value="2">user</option>
-                                    </select>
-                                    <small><?php echo form_error('role_id');?></small>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
                                     <label class="form-label" >is Admin</label>
                                     <input class="form-control" type="checkbox" name="su_user" >
                                     <small><?php echo form_error('su_user');?></small>
                                 </td>
+                            </tr>
+                            <tr>
                                 <td>
-                                    <label class="form-label" >User Status</label>
-                                    <select class="form-control" name="user_st" >
-                                        <option value="" >select status</option>
-                                        <option value="1">Active</option>
-                                        <option value="0">Inactive</option>
-                                    </select>
-                                    <small><?php echo form_error('user_st');?></small>
+                                    <label class="form-label" >user Name</label>
+                                    <input class="form-control" type="text" name="user_nm" >
+                                    <small><?php echo form_error('user_nm');?></small>
+                                </td>
+                                <td>
+                                    <label class="form-label" >Phone No</label>
+                                    <input class="form-control" type="text" name="user_ph" >
+                                    <small><?php echo form_error('user_ph');?></small>
                                 </td>
                             </tr>
                             <tr>
@@ -65,6 +45,27 @@
                                     <small><?php echo form_error('cpass_wd');?></small>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <label class="form-label" >User Role</label>
+                                    <select class="form-control" name="role_id" >
+                                        <option value="" >select role</option>
+                                        <option value="1">admin</option>
+                                        <option value="2">user</option>
+                                    </select>
+                                    <small><?php echo form_error('role_id');?></small>
+                                </td>
+                                <td>
+                                    <label class="form-label" >User Status</label>
+                                    <select class="form-control" name="user_st" >
+                                        <option value="" >select status</option>
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                    </select>
+                                    <small><?php echo form_error('user_st');?></small>
+                                </td>
+                            </tr>
+                            
                             <tr>
                                 <td colspan="2" class="text-center">
                                     <button class="btn btn-primary" type="submit" name="submit" >Submit</button>
