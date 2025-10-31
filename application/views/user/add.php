@@ -10,15 +10,10 @@
                     <form method="post" action="<?php echo base_url('user/register')?>" autocomplete="off" >
                         <table class="table table-bordered">
                             <tr>
-                                <td>
+                                <td colspan="2">
                                     <label class="form-label">Email ID</label>
                                     <input class="form-control" type="email" name="mail_id" autocomplete="off" >
                                     <small><?php echo form_error('mail_id');?></small>
-                                </td>
-                                <td>
-                                    <label class="form-label" >is Admin</label>
-                                    <input class="form-control" type="checkbox" name="su_user" >
-                                    <small><?php echo form_error('su_user');?></small>
                                 </td>
                             </tr>
                             <tr>
@@ -41,8 +36,8 @@
                                 </td>
                                 <td>
                                     <label class="form-label" >Confirm Password</label>
-                                    <input class="form-control" type="password" name="cpass_wd" >
-                                    <small><?php echo form_error('cpass_wd');?></small>
+                                    <input class="form-control" type="password" name="cpas_wd" >
+                                    <small><?php echo form_error('cpas_wd');?></small>
                                 </td>
                             </tr>
                             <tr>
@@ -63,6 +58,22 @@
                                         <option value="0">Inactive</option>
                                     </select>
                                     <small><?php echo form_error('user_st');?></small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="form-label" >User type</label>
+                                    <select class="form-control" name="user_ty">
+                                        <option value="">select user type</option>
+                                        <option value="1">User</option>
+                                        <option value="2">Manager</option>
+                                    </select>
+                                    <small><?php echo form_error('user_ty');?></small>
+                                </td>
+                                <td>
+                                    <label class="form-label" >is Admin?</label>
+                                    <input class="form-control" type="checkbox" name="user_ad" >
+                                    <small><?php echo form_error('user_ad');?></small>
                                 </td>
                             </tr>
                             
