@@ -24,7 +24,7 @@
                             <tr>
                                 <td>
                                     <label class="form-label" >Phone No</label>
-                                    <input class="form-control" type="text" name="user_ph" autocomplete="new-password">
+                                    <input class="form-control" type="text" name="user_ph" >
                                     <small><?php echo form_error('user_ph');?></small>
                                 </td>
                                 <td>
@@ -40,7 +40,7 @@
                             <tr>
                                 <td>
                                     <label class="form-label" >is Admin</label>
-                                    <input class="form-control" type="text" name="su_user" autocomplete="new-password">
+                                    <input class="form-control" type="checkbox" name="su_user" >
                                     <small><?php echo form_error('su_user');?></small>
                                 </td>
                                 <td>
