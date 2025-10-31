@@ -29,7 +29,11 @@
                                 </td>
                                 <td>
                                     <label class="form-label" >User Role</label>
-                                    <input class="form-control" type="text" name="role_id" >
+                                    <select class="form-control" name="role_id" >
+                                        <option value="" >select role</option>
+                                        <option value="1">admin</option>
+                                        <option value="2">user</option>
+                                    </select>
                                     <small><?php echo form_error('role_id');?></small>
                                 </td>
                             </tr>
@@ -41,7 +45,11 @@
                                 </td>
                                 <td>
                                     <label class="form-label" >User Status</label>
-                                    <input class="form-control" type="text" name="user_st" >
+                                    <select class="form-control" name="user_st" >
+                                        <option value="" >select status</option>
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                    </select>
                                     <small><?php echo form_error('user_st');?></small>
                                 </td>
                             </tr>

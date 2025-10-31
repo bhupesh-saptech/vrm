@@ -22,11 +22,12 @@ class User extends CI_Controller {
         $this->load->view("incld/footer");
     } 
     public function register() {
-        $this->form_validation->set_rules('user_nm','User Name','required');
-        $this->form_validation->set_rules('user_ph','Phone No','required');
-        $this->form_validation->set_rules('role_id','User Role','required');
-        $this->form_validation->set_rules('mail_id','Email ID' ,'required|valid_email');
-        $this->form_validation->set_rules('pass_wd','Password' ,'required');
+        $this->form_validation->set_rules('user_nm','User Name','required|trim|alpha');
+        $this->form_validation->set_rules('user_ph','Phone No','required|trim');
+        $this->form_validation->set_rules('role_id','User Role','required|trim');
+        $this->form_validation->set_rules('mail_id','Email ID' ,'required|valid_email|is_unique[users.mail_id]');
+        $this->form_validation->set_rules('pass_wd','Password' ,'required|trim');
+        $this->form_validation->set_rules('cpass_wd','Password' ,'required|trim|matches[pass_wd]');
         if($this->form_validation->run()) {
             $data = array('user_nm'  => $this->input->post('user_nm'),
                           'user_ph'   => $this->input->post('user_ph'),
