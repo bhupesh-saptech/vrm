@@ -82,8 +82,7 @@
                             <tr>
                                 <td colspan="2" class="text-center">
                                     <button class="btn btn-primary" type="submit">Save</button>
-                                </td>
-                               
+                                </td>             
                             </tr>
                         </table>
                     </form>
