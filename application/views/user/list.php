@@ -1,8 +1,10 @@
 <div class="container">
     <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">List of users</h5><a href="<?=base_url('user/add')?>"><button class="btn btn-primary float-right">Add New User</button></a>
+        <div class="card-header">
+            <h5 class="card-title">List of users</h5>
+            <a href="<?=base_url('user/add')?>"><button class="btn btn-primary float-right">Add New User</button></a>
         </div>
+        <div class="card-body">
             <div class="row">
                 <table class="table table-bordered">
                     <tr>

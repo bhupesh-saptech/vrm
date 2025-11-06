@@ -1,6 +1,4 @@
-<?php 
-    require_once 'assets/incld/header.php';
-?>  
+
 <div class="section">
     <div class="container">
         <div class="row justify-content-center">
@@ -17,12 +15,14 @@
                         </div>
                         <form action="login/login" method="POST">
                             <div class="form-group">
-                                <label for="">User ID</label>
-                                <input type="text" name="user_id" class="form-control" placeholder="User ID">
+                                <label for="">Email ID</label>
+                                <input type="text" name="mail_id" class="form-control" placeholder="Mail ID">
+                                <small class="text-danger"><?php echo form_error('mail_id');?></small>
                             </div>
                             <div class="form-group">
                                 <label for="">Password</label>
                                 <input type="password" name="pass_wd" class="form-control" placeholder="Password">
+                                <small class="text-danger"><?php echo form_error('pass_wd');?></small>
                             </div>
                             <div class="form-group">
                                 <button type="submit" name="submit" class="btn btn-primary btn-block" >Login</button>
@@ -34,8 +34,3 @@
         </div>
     </div>
 </div>
-<?php
-    require_once 'assets/incld/jslib.php';
-    require_once 'assets/incld/footer.php';
-    
-?>

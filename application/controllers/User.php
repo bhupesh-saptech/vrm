@@ -14,6 +14,13 @@ class User extends CI_Controller {
         $this->load->view("incld/jslib");
         $this->load->view("incld/footer");
     }
+    public function dash() {
+        $data['users'] = $this->User_model->get_user();
+        $this->load->view("incld/header");
+        $this->load->view("user/list",$data);
+        $this->load->view("incld/jslib");
+        $this->load->view("incld/footer");
+    }
     public function add() {
         
         $data = new stdClass();
@@ -86,6 +93,7 @@ class User extends CI_Controller {
                             'user_st'  => $this->input->post('user_st') ,
                             'user_ty'  => $this->input->post('user_ty') ,
                             'user_ad'  => $this->input->post('user_ad') ) ;
+            $data['pass_wd'] = password_hash($data['pass_wd'],PASSWORD_DEFAULT);
             return $data;
         } else {
             // echo validation_errors();

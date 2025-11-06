@@ -11,6 +11,10 @@
             }
 
         }
+        public function read_user($mail_id) {
+            $this->db->where('mail_id',$mail_id );
+            return $this->db->get('users')->row();
+        }
         public function add_user($data) {
             $this->db->insert('users',$data);
         }
