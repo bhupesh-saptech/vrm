@@ -5,6 +5,9 @@
     if(isset($_POST['action'])) {
       $rqst = json_decode(json_encode($_POST));
       switch($rqst->action) {
+        case 'setPlant': 
+          $_SESSION['supp_id'] = $rqst->supp_id;
+          break;
         case 'setDFilter' :
           $_SESSION['from_dt'] = $rqst->from_dt;
           $_SESSION['upto_dt'] = $rqst->upto_dt;
@@ -16,22 +19,31 @@
       $_SESSION['upto_dt'] = date('Y-m-d');
     }
     $sess = json_decode(json_encode($_SESSION));
-    $util->writeLog(json_encode($sess));
-    if(isset($sess->plnt_id)) {
-      $query = "select * from usr_role where role_nm = ?";
-      $param = array($sess->role_nm);
-      $roles  = $util->execQuery($query,$param,1);
+   
+    $query = "select * from usr_data where user_id = ?";
+    $param = array($sess->user_id);
+    $user  = $util->execQuery($query,$param,1);
+    
+    $query = "select * from obj_type where objty = 'PLNT'";
+    $param = array();
+    $objt  = $util->execQuery($query,$param,1);
+    
+    $query = "select * from usr_auth where objty = 'PLNT' and user_id = ? and objky not in (?)";
+    $param = array($sess->user_id,$user->objky);
+    $items  = $util->execQuery($query,$param);
 
-      $query = "select * from obj_type where objty = ? ";
-      $param = array($roles->aobj_ty);
-      $objt  = $util->execQuery($query,$param,1);
-      
-      $query = "select objky,objnm from {$objt->table} where objky = ?";
-      $param = array($sess->plnt_id);
-      $plnt  = $util->execQuery($query,$param,1); 
+    $item = new stdClass();
+    $item->user_id = $user->user_id;
+    $item->objty   = 'PLNT';
+    $item->objky   = $user->objky;
 
+    if(isset($items)) {
+        array_push($items,$item);
+    } else {
+        $items = [];
+        array_push($items,$item);
     }
-  
+
 ?>
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -46,9 +58,25 @@
         </a>
       </li>
       <li class="nav-item">
-          <input type="hidden" class="form-control" name="plnt_id" id="plnt_id" value="<?php echo "{$plnt->objky}"; ?>">
-          <input type="text"   class="form-control" name="plnt_nm" id="plnt_nm" value="<?php echo "{$plnt->objky} : {$plnt->objnm}"; ?>" readonly>
-      </li>
+            <select class="form-control" id="supp_id" onchange="setPlant(this);">
+            <?php  foreach($items as $item) { 
+                        if (!empty($item->objky)) {
+                            $query = "select * from {$objt->table} where objky = ?";
+                            $param = array($item->objky);
+                            $objk  = $util->execQuery($query,$param,1);
+                        } else {
+                            $objk = new stdClass();
+                            $objk->objnm = "";
+                        }?>
+                        <option value="<?php echo $item->objky; ?>" <?php if($item->objky == $user->objky ) { echo "selected"; } ?>> 
+                            <?php echo "{$item->objky} : {$objk->objnm}"; ?>
+                        </option> 
+            <?php }?>
+            </select>
+        </li>
+    <li class="nav-item">
+        <a href="index.php" class="nav-link"><img src="../assets/dist/img/go.png" width="60px" hight="6px"></a>
+    </li>
     <li class="nav-item">
       <form method="post">
         <input type="date" class="form-control ml-3" name="from_dt" value="<?php echo $sess->from_dt; ?>">
